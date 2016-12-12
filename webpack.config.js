@@ -30,7 +30,7 @@ function log(req, res, opt) {
 const webpackConfig = {
     context: __dirname,
     contentBase: __dirname,
-    entry: './src/app.js',
+    entry: './javascript/app.js',
     devtool: 'source-map',
     output: {
         path: __dirname + '/build',
@@ -55,6 +55,9 @@ const webpackConfig = {
                 test: /\.scss$/,
                 loader: 'style!css!sass',
             },
+            {   test: /\.html$/,
+                loader: 'html'
+            }
         ],
     },
     resolve: {
